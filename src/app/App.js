@@ -8,9 +8,15 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <Listings />
-        <Building />
-        <ListingForm />
+        <div className="col-md-6">
+          <Listings />
+        </div>
+        <div className="col-md-6">
+          <Building />
+        </div>
+        <div className="col-md-12">
+          <ListingForm />
+        </div>
       </div>
     );
   }
