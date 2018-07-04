@@ -21,4 +21,17 @@ const getRequest = () => {
   });
 };
 
-export default { getRequest };
+const postRequest = (listing) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .post(`${constants.firebaseConfig.databaseURL}/listings.json`, listing)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  });
+};
+
+export default { getRequest, postRequest };
